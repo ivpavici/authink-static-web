@@ -424,7 +424,9 @@ body {
 
 #home-social {
 	width: 750px;
-	margin: 20px auto;
+	margin-bottom: 50px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 	#home-social-facebook {
@@ -487,14 +489,14 @@ body {
 		text-align: center;
 		font-size: 24px;
 		color: #888;
-		margin-bottom: 40px;
+		margin-bottom: 50px;
 	}
 
 	.home-team-member {
 		display: block;
 		float: left;
 		width: 200px;
-		height: 400px;
+		height: 350px;
 	}
 
 		.home-team-member-picture {
@@ -584,6 +586,36 @@ body {
 					cursor: pointer;
 					background-position: -30px;
 				}
+
+#support {
+	width: 850px;
+	margin: 20px auto;
+}
+
+	.support-member {
+		display: block;
+		float: left;
+		width: 200px;
+		height: 350px;
+	}
+	.support-social-linkedin {
+		display: block;
+		margin-left: auto;
+    	margin-right: auto;
+		width: 30px;
+		height: 30px;
+		background: transparent url('../images/social-team-linkedin.png');
+	}
+	.support-picture {
+			width: 150px;
+			height: 150px;
+			margin: 0 auto;
+		}
+
+			.support-picture:hover {
+				cursor: pointer;
+			}
+
 
 #home-contact {
 	margin-top: 70px;
