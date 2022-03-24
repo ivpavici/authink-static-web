@@ -1,0 +1,789 @@
+/*
+
+     ___      __    __  .___________. __    __   __  .__   __.  __  ___ 
+    /   \    |  |  |  | |           ||  |  |  | |  | |  \ |  | |  |/  / 
+   /  ^  \   |  |  |  | `---|  |----`|  |__|  | |  | |   \|  | |  '  /  
+  /  /_\  \  |  |  |  |     |  |     |   __   | |  | |  . `  | |    <   
+ /  _____  \ |  `--'  |     |  |     |  |  |  | |  | |  |\   | |  .  \  
+/__/     \__\ \______/      |__|     |__|  |__| |__| |__| \__| |__|\__\ 
+
+
+               Developed in April, 2013. (c) AuThink Team
+
+*/
+
+/*
+
+ **** COLOR PALETTE
+
+	  AuThink Blue - #116c98
+ 	  AuThink Gold - #ff9c00
+
+*/
+
+@import url('reset.css');
+
+body {
+	background: transparent url('../images/background-large-white.jpg') no-repeat center center fixed;
+}
+
+#container {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#header {
+	height: 70px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+	#header-logo {
+		background: transparent url('../images/header-logo.png');
+		display: block;
+		float: left;
+		width: 150px;
+		height: 46px;
+		margin-top: 10px;
+		margin-left: 10px;
+	}
+
+		#header-logo:active {
+			margin-top: 11px;
+		}
+
+	#header-menu {
+		display: block;
+		float: right;
+		margin-top: 10px;
+	}
+
+		#header-menu li {
+			float: left;
+		}
+
+			#header-menu li a {
+				font-family: 'Trebuchet MS', Arial, sans-serif;
+				color: #aaa;
+				text-decoration: none;
+				font-size: 18px;
+				padding: 24px 15px 10px 15px;
+				line-height: 70px;
+				-webkit-transition: all 0.2s ease-in-out;
+				-moz-transition: all 0.2s ease-in-out;
+				-o-transition: all 0.2s ease-in-out;
+				transition: all 0.2s ease-in-out;
+			}
+
+				#header-menu li a:hover {
+					color: #888;
+					border-bottom: 4px solid #ccc;
+				}
+
+				#header-menu li a.active {
+					color: #444;
+					border-bottom: 4px solid #ff9c00;
+				}
+				
+#home-download {
+	margin-top: 20px;
+}
+
+	#home-download p {
+		font-family: 'Trebuchet MS';
+		color: #444;
+		text-align: center;
+		font-size: 17px;
+		line-height: 21px;
+	}
+
+	#home-download-button {
+		display: block;
+		width: 345px; height: 57px;
+		background: #116c98 url('../images/download-lite.png') no-repeat center center;
+		padding: 15px 30px;
+		border-radius: 4px;
+		margin: 30px auto 0 auto;
+	}
+
+		#home-download-button:hover {
+			cursor: pointer;
+			background: #118098 url('../images/download-lite.png') no-repeat center center;
+		}
+
+#home-top {
+	display: block;
+	position: relative;
+	height: 500px;
+}
+
+	#home-top-circle {
+		display: block;
+		width: 310px;
+		height: 310px;
+		background: transparent url('../images/circle-top-1.jpg') no-repeat center center;
+		border-radius: 100%;
+		position: absolute;
+		top: 55px;
+		left: 50px;
+		-webkit-transition: all 0.4s ease-in-out;
+		-moz-transition: all 0.4s ease-in-out;
+		-o-transition: all 0.4s ease-in-out;
+		transition: all 0.4s ease-in-out;
+		transform: scale(0);
+		-ms-transform: scale(0);
+		-webkit-transform: scale(0);
+		-o-transform: scale(0);
+		-moz-transform: scale(0);
+	}
+
+		#home-top-circle.full {
+			transform: scale(1);
+			-ms-transform: scale(1);
+			-webkit-transform: scale(1);
+			-o-transform: scale(1);
+			-moz-transform: scale(1);
+		}
+
+	#home-top-line {
+		display: block;
+		width: 0px;
+		height: 17px;
+		background: transparent url('../images/circle-top-line.png') no-repeat center center;
+		position: absolute;
+		top: 100px;
+		left: 324px;
+		-webkit-transition: all 0.4s ease-in-out;
+		-moz-transition: all 0.4s ease-in-out;
+		-o-transition: all 0.4s ease-in-out;
+		transition: all 0.4s ease-in-out;
+	}
+
+		#home-top-line.full {
+			width: 405px;
+		}
+
+	#home-top-heading {
+		display: none;
+		width: 308px;
+		height: 51px;
+		background: transparent url('../images/circle-top-heading.png') no-repeat center center;
+		position: absolute;
+		top: 50px;
+		left: 385px;
+	}
+
+	#home-top-text {
+		display: none;
+		font-family: 'Trebuchet MS', Arial, sans-serif;
+		width: 580px;
+		position: absolute;
+		left: 390px;
+		top: 140px;
+		color: #555;
+		line-height: 24px;
+	}
+
+#home-did-you-know {
+	display: none;
+	position: relative;
+	height: 350px;
+}
+
+	#home-did-you-know-heading {
+		display: block;
+		width: 309px;
+		height: 49px;
+		background: transparent url('../images/circle-did-you-know-heading.png') no-repeat center center;
+	}
+
+	#home-did-you-know-world {
+		display: block;
+		width: 105px;
+		height: 105px;
+		background: transparent url('../images/circle-did-you-know-world.png') no-repeat center center;
+		position: absolute;
+		top: 100px;
+		left: 115px;
+	}
+
+		#home-did-you-know-world-amount {
+			display: none;
+			font-family: 'Trebuchet MS', Arial, sans-serif;
+			position: absolute;
+			left: 135px;
+			top: 115px;
+			color: #116c98;
+			font-size: 40px;
+			font-weight: bold;
+			text-align: right;
+			width: 200px;
+		}
+
+		#home-did-you-know-world-text {
+			display: none;
+			font-family: 'Trebuchet MS', Arial, sans-serif;
+			position: absolute;
+			left: 150px;
+			top: 160px;
+			color: #999;
+			font-size: 22px;
+		}
+
+	#home-did-you-know-clock {
+		display: block;
+		width: 104px;
+		height: 104px;
+		background: transparent url('../images/circle-did-you-know-clock.png') no-repeat center center;
+		position: absolute;
+		top: 100px;
+		left: 450px;
+	}
+
+		#home-did-you-know-clock-amount {
+			display: none;
+			font-family: 'Trebuchet MS', Arial, sans-serif;
+			position: absolute;
+			left: 500px;
+			top: 130px;
+			color: #116c98;
+			font-size: 40px;
+			font-weight: bold;
+			text-align: right;
+			width: 210px;
+		}
+
+		#home-did-you-know-clock-text-up {
+			display: none;
+			font-family: 'Trebuchet MS', Arial, sans-serif;
+			position: absolute;
+			left: 515px;
+			top: 104px;
+			color: #999;
+			font-size: 22px;
+		}
+
+		#home-did-you-know-clock-text-down {
+			display: none;
+			font-family: 'Trebuchet MS', Arial, sans-serif;
+			position: absolute;
+			left: 504px;
+			top: 174px;
+			color: #999;
+			font-size: 19px;
+		}
+
+	#home-did-you-know-boys {
+		display: block;
+		width: 180px;
+		height: 78px;
+		background: transparent url('../images/circle-did-you-know-boys.png') no-repeat center center;
+		position: absolute;
+		top: 115px;
+		left: 780px;
+	}
+
+		#home-did-you-know-boys-text {
+			display: none;
+			font-family: 'Trebuchet MS', Arial, sans-serif;
+			position: absolute;
+			left: 782px;
+			top: 180px;
+			color: #999;
+			font-size: 18px;
+		}
+
+			#home-did-you-know-boys-text span {
+				font-weight: bold;
+				font-size: 30px;
+				color: #116c98;
+			}
+
+#home-usage {
+	display: none;
+	position: relative;
+	height: 600px;
+}
+
+	#home-usage-heading {
+		display: block;
+		width: 389px;
+		height: 48px;
+		background: transparent url('../images/circle-usage-heading.png') no-repeat center center;
+	}
+
+	#home-usage-children {
+		width: 333px;
+		position: absolute;
+		top: 80px;
+		left: 0px;
+	}
+
+		#home-usage-children-image {
+			display: block;
+			width: 99px;
+			height: 113px;
+			background: transparent url('../images/circle-usage-children.png') no-repeat center center;
+			margin: 40px auto 0 auto;
+		}
+
+		#home-usage-children-container {
+			display: none;
+		}
+
+			#home-usage-children-container h1 {
+				font-family: 'Trebuchet MS', Arial, sans-serif;
+				text-align: center;
+				font-weight: bold;
+				color: #116c98;
+				font-size: 28px;
+				line-height: 72px;
+			}
+
+			#home-usage-children-container p {
+				font-family: 'Trebuchet MS', Arial, sans-serif;
+				text-align: center;
+				color: #888;
+				font-size: 16px;
+				padding: 15px 30px;
+				line-height: 21px;
+			}
+
+	#home-usage-teachers {
+		width: 333px;
+		position: absolute;
+		top: 80px;
+		left: 333px;
+	}
+
+		#home-usage-teachers-image {
+			display: block;
+			width: 81px;
+			height: 111px;
+			background: transparent url('../images/circle-usage-teachers.png') no-repeat center center;
+			margin: 40px auto 0 auto;
+		}
+
+		#home-usage-teachers-container {
+			display: none;
+		}
+
+			#home-usage-teachers-container h1 {
+				font-family: 'Trebuchet MS', Arial, sans-serif;
+				text-align: center;
+				font-weight: bold;
+				color: #116c98;
+				font-size: 28px;
+				line-height: 72px;
+			}
+
+			#home-usage-teachers-container p {
+				font-family: 'Trebuchet MS', Arial, sans-serif;
+				text-align: center;
+				color: #888;
+				font-size: 16px;
+				padding: 15px 30px;
+				line-height: 21px;
+			}
+
+	#home-usage-parents {
+		width: 333px;
+		position: absolute;
+		top: 80px;
+		left: 666px;
+	}
+
+		#home-usage-parents-image {
+			display: block;
+			width: 114px;
+			height: 115px;
+			background: transparent url('../images/circle-usage-parents.png') no-repeat center center;
+			margin: 40px auto 0 auto;
+		}
+
+		#home-usage-parents-container {
+			display: none;
+		}
+
+			#home-usage-parents-container h1 {
+				font-family: 'Trebuchet MS', Arial, sans-serif;
+				text-align: center;
+				font-weight: bold;
+				color: #116c98;
+				font-size: 28px;
+				line-height: 72px;
+			}
+
+			#home-usage-parents-container p {
+				font-family: 'Trebuchet MS', Arial, sans-serif;
+				text-align: center;
+				color: #888;
+				font-size: 16px;
+				padding: 15px 30px;
+				line-height: 21px;
+			}
+
+#home-social {
+	width: 750px;
+	margin: 20px auto;
+}
+
+	#home-social-facebook {
+		display: block;
+		float: left;
+		background: transparent url('../images/social-facebook.png') no-repeat left center;
+		line-height: 40px;
+		font-family: 'Trebuchet MS', Arial, sans-serif;
+		text-decoration: none;
+		padding-left: 35px;
+		font-size: 18px;
+		color: #888;
+		margin: 0 30px;
+	}
+
+		#home-social-facebook:hover {
+			color: #444;
+		}
+
+	#home-social-twitter {
+		display: block;
+		float: left;
+		background: transparent url('../images/social-twitter.png') no-repeat left center;
+		line-height: 40px;
+		font-family: 'Trebuchet MS', Arial, sans-serif;
+		text-decoration: none;
+		padding-left: 35px;
+		font-size: 18px;
+		color: #888;
+		margin: 0 30px;
+	}
+
+		#home-social-twitter:hover {
+			color: #444;
+		}
+
+	#home-social-linkedin {
+		display: block;
+		float: left;
+		background: transparent url('../images/social-linkedin.png') no-repeat left center;
+		line-height: 40px;
+		font-family: 'Trebuchet MS', Arial, sans-serif;
+		text-decoration: none;
+		padding-left: 35px;
+		font-size: 18px;
+		color: #888;
+		margin: 0 30px;
+	}
+
+		#home-social-linkedin:hover {
+			color: #444;
+		}
+
+#home-team {
+	margin-top: 70px;
+}
+
+	.home-team-heading {
+		font-family: 'Trebuchet MS', Arial, sans-serif;
+		text-align: center;
+		font-size: 24px;
+		color: #888;
+		margin-bottom: 40px;
+	}
+
+	.home-team-member {
+		display: block;
+		float: left;
+		width: 200px;
+		height: 400px;
+	}
+
+		.home-team-member-picture {
+			width: 150px;
+			height: 150px;
+			margin: 0 auto;
+		}
+
+			.home-team-member-picture:hover {
+				cursor: pointer;
+			}
+
+			.home-team-member-picture img {
+				border-radius: 100%;
+				-webkit-transition: all 0.2s ease-in-out;
+				-moz-transition: all 0.2s ease-in-out;
+				-o-transition: all 0.2s ease-in-out;
+				transition: all 0.2s ease-in-out;
+				transform: scale(0.9);
+				-ms-transform: scale(0.9);
+				-webkit-transform: scale(0.9);
+				-o-transform: scale(0.9);
+				-moz-transform: scale(0.9);
+				opacity: 0.7;
+			}
+
+				.home-team-member-picture img.full {
+					transform: scale(1);
+					-ms-transform: scale(1);
+					-webkit-transform: scale(1);
+					-o-transform: scale(1);
+					-moz-transform: scale(1);
+					opacity: 1;
+				}
+
+		.home-team-member-name {
+			font-family: 'Trebuchet MS', Arial, sans-serif;
+			text-align: center;
+			font-size: 21px;
+			color: #555;
+			margin: 15px 0;
+		}
+
+		.home-team-member-social {
+			width: 80px;
+			margin: 0 auto;
+		}
+
+			.home-team-member-social-facebook {
+				display: block;
+				float: left;
+				width: 30px;
+				height: 30px;
+				margin: 0 5px;
+				background: transparent url('../images/social-team-facebook.png');
+			}
+
+				.home-team-member-social-facebook:hover {
+					cursor: pointer;
+					background-position: -30px;
+				}
+
+			.home-team-member-social-twitter {
+				display: block;
+				float: left;
+				width: 30px;
+				height: 30px;
+				margin: 0 5px;
+				background: transparent url('../images/social-team-twitter.png');
+			}
+
+				.home-team-member-social-twitter:hover {
+					cursor: pointer;
+					background-position: -30px;
+				}
+
+			.home-team-member-social-linkedin {
+				display: block;
+				float: left;
+				width: 30px;
+				height: 30px;
+				margin: 0 5px;
+				background: transparent url('../images/social-team-linkedin.png');
+			}
+
+				.home-team-member-social-linkedin:hover {
+					cursor: pointer;
+					background-position: -30px;
+				}
+
+#home-contact {
+	margin-top: 70px;
+}
+
+	#home-contact-heading {
+		font-family: 'Trebuchet MS', Arial, sans-serif;
+		text-align: center;
+		font-size: 24px;
+		color: #888;
+		margin-bottom: 40px;
+	}
+
+		#home-contact-heading a {
+			font-weight: bold;
+			font-size: 27px;
+			color: #116c98;
+			text-decoration: none;
+		}
+
+			#home-contact-heading a:hover {
+				color: #ff9c00;
+			}
+
+#home-contact-form {
+
+}
+
+	#home-contact-form-fields {
+		width: 644px;
+		margin: 0 auto;
+	}
+
+		.home-contact-form-field {
+			font-family: 'Trebuchet MS', Arial, sans-serif;
+			font-size: 18px;
+			color: #ccc;
+			padding: 5px 10px;
+			border-radius: 4px;
+			border: 1px solid #ddd;
+			width: 300px;
+			margin: 10px;
+			outline: none;
+		}
+
+	#home-contact-form-message {
+		width: 644px;
+		margin: 0 auto;
+	}
+
+		.home-contact-form-textarea {
+			font-family: 'Trebuchet MS', Arial, sans-serif;
+			font-size: 18px;
+			color: #ccc;
+			padding: 5px 10px;
+			border-radius: 4px;
+			border: 1px solid #ddd;
+			width: 624px;
+			height: 140px;
+			margin: 10px;
+			outline: none;
+		}
+
+	#home-contact-form-buttons {
+		margin: 20px 0 80px 0;
+	}
+
+		#home-contact-form-send {
+			display: block;
+			width: 220px;
+			height: 50px;
+			text-align: center;
+			margin: 0 auto;
+			background: #ff9c00;
+			line-height: 50px;
+			font-family: 'Trebuchet MS', Arial, sans-serif;
+			font-size: 21px;
+			font-weight: bold;
+			color: #333;
+			text-shadow: 0px 1px #ffd696;
+			border-radius: 5px;
+			box-shadow: 0px 3px 0px #cc7300;
+		}
+
+			#home-contact-form-send:hover {
+				cursor: pointer;
+				background: #ffae00;
+			}
+
+			#home-contact-form-send:active {
+				position: relative;
+				top: 1px;
+			}
+
+#home-contact-form-thanks {
+	display: none;
+}
+
+	.home-contact-form-thanks-heading-big {
+		display: block;
+		font-family: 'Trebuchet MS', Arial, sans-serif;
+		text-align: center;
+		font-size: 30px;
+		color: #444;
+		margin-bottom: 20px;
+	}
+
+	.home-contact-form-thanks-heading-small {
+		font-family: 'Trebuchet MS', Arial, sans-serif;
+		text-align: center;
+		font-size: 21px;
+		color: #666;
+		margin-bottom: 40px;
+	}
+
+	#home-contact-form-thanks-cake {
+		display: block;
+		height: 300px;
+		background: transparent url('../images/contact-cake.png') no-repeat center center;
+	}
+
+#overlay {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: transparent url('../images/white-overlay-85.png');
+	z-index: 1000;
+}
+
+#overlay-success {
+
+}
+
+	#overlay-success-mail {
+		display: block;
+		width: 200px;
+		height: 200px;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		margin-top: -100px;
+		margin-left: -100px;
+		z-index: 2000;
+		background: yellow;
+		background: transparent url('../images/contact-mail.png');
+		border-radius: 100%;
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+		transform: scale(0);
+		-ms-transform: scale(0);
+		-webkit-transform: scale(0);
+		-o-transform: scale(0);
+		-moz-transform: scale(0);
+	}
+
+		#overlay-success-mail.full {
+			transform: scale(1);
+			-ms-transform: scale(1);
+			-webkit-transform: scale(1);
+			-o-transform: scale(1);
+			-moz-transform: scale(1);
+		}
+
+	#overlay-success-thumb {
+		display: block;
+		width: 200px;
+		height: 200px;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		margin-top: -100px;
+		margin-left: -100px;
+		z-index: 2000;
+		background: yellow;
+		background: transparent url('../images/contact-thumb.png');
+		border-radius: 100%;
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+		transform: scale(0);
+		-ms-transform: scale(0);
+		-webkit-transform: scale(0);
+		-o-transform: scale(0);
+		-moz-transform: scale(0);
+	}
+
+		#overlay-success-thumb.full {
+			transform: scale(1);
+			-ms-transform: scale(1);
+			-webkit-transform: scale(1);
+			-o-transform: scale(1);
+			-moz-transform: scale(1);
+		}
+
+.clear {
+	clear: both;
+}
